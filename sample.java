@@ -2,7 +2,7 @@ import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
 public class sample {
-	private static final String consumerKey       = "";
+	private static final String consumerKey       = "あばばばっばっばあ";
 	private static final String consumerSecret    = "";
 	private static final String accessToken       = "";
 	private static final String accessTokenSecret = "";
