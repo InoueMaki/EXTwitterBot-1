@@ -12,6 +12,7 @@ public class DBManager {
 	private Statement smt;
 	private ResultSet rs;
 
+	//„Ç≥„Éç„ÇØ„Ç∑„Éß„É≥„ÅÆÁ¢∫Á´ã
 	public void getConnection(){
 		String url      = "jdbc:mysql://localhost/excite";
 		String user     = "root";
@@ -50,7 +51,7 @@ public class DBManager {
 	
 
 	
-	public void closeConnection()throws Exception{
+	public void closeConnection(){
 		try {
 			rs.close();
 			smt.close();
@@ -83,7 +84,7 @@ public class DBManager {
 			}
 			DBM.closeConnection();	
 		}catch(Exception e){
-			System.err.println("é∏îsÇµÇ‹ÇµÇΩ");
+			System.err.println("failure");
 		}
 		
 	}
