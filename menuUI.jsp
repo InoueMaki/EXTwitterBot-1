@@ -11,7 +11,7 @@
 		<jsp:include page="header.jsp" />
 		<CENTER ID="a">
 			<H1>メニュー画面</H1>
-			<FORM ACTION='./loginUI.jsp'>
+			<FORM METHOD="POST" ACTION="Control">
 				<TABLE class="center">
 					<TR>
 						<TD ><INPUT type="submit" class="menuButton" value="単発ツイート" ID=1>
