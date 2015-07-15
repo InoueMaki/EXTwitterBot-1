@@ -12,7 +12,6 @@ public class DBManager {
 	private Statement smt;
 	private ResultSet rs;
 
-	//コネクションの確立
 	public void getConnection(){
 		String url      = "jdbc:mysql://localhost/excite";
 		String user     = "root";
@@ -51,7 +50,7 @@ public class DBManager {
 	
 
 	
-	public void closeConnection(){
+	public void closeConnection()throws Exception{
 		try {
 			rs.close();
 			smt.close();
@@ -84,7 +83,7 @@ public class DBManager {
 			}
 			DBM.closeConnection();	
 		}catch(Exception e){
-			System.err.println("failure");
+			System.err.println("失敗しました");
 		}
 		
 	}
