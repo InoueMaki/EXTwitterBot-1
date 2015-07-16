@@ -10,17 +10,6 @@
 		</SCRIPT>
 		<TITLE>Session TimeOut</TITLE>
 	</HEAD>
-<html>
-	<head>
-	<SCRIPT type="text/javascript">
-	setTimeout("link()", 3000);
-	function link(){
-	location.href='http://localhost:8080/ext/loginUI.jsp';
-	}
-	</SCRIPT>
-	
-
-	</head>
 	
 	<!-- 3秒後にlink() -->
 	<BODY onload="setTimeout('link()', 3*1000)">
