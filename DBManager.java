@@ -50,7 +50,7 @@ public class DBManager {
 	
 
 	
-	public void closeConnection()throws Exception{
+	public void closeConnection(){
 		try {
 			rs.close();
 			smt.close();

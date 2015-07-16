@@ -13,14 +13,14 @@ public class Logout extends HttpServlet{
 	public void doGet(HttpServletRequest request,HttpServletResponse response) 
 				throws ServletException,IOException{
 		
+		//セッションチェック（なければnull）
 		HttpSession session = request.getSession(false);
-		//session削除
+
+		//セッション削除
 		if(null != session){
 			session.invalidate();
 		}
-		request.setAttribute("state", "close");
 		response.sendRedirect("Control");
-		//response.sendRedirect("Control");
 	}
 
 }
