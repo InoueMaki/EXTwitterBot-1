@@ -91,7 +91,6 @@ public class ExBot {
 		try {
 			while (rs1.next()) {
 				tweets.add(rs1.getString("text"));
-				System.out.println(rs1.getString("text"));
 			}
 		} catch (SQLException e) {
 			System.err.println("定期ツイート検索できません");
@@ -102,7 +101,6 @@ public class ExBot {
 		try {
 			while (rs2.next()) {
 				tweets.add(rs2.getString("text"));
-				System.out.println(rs2.getString("text"));
 			}
 		} catch (SQLException e) {
 			System.err.println("定期ツイート検索できません");
@@ -114,12 +112,17 @@ public class ExBot {
 		return tweets;
 	}
 
+	// 単発ツイート収集
 	public static ArrayList<String> getOnceTweet() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		ArrayList<Integer> ids = new ArrayList<Integer>();
 
+		// 現在時刻
 		Timestamp now = new Timestamp();
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 		// クエリ作成
 		String qry1 = "SELECT text,once_id from once where posted =0 && reserve_time < '"
 				+ now + "';";
