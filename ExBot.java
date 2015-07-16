@@ -119,10 +119,7 @@ public class ExBot {
 
 		// 現在時刻
 		Timestamp now = new Timestamp();
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
+		
 		// クエリ作成
 		String qry1 = "SELECT text,once_id from once where posted =0 && reserve_time < '"
 				+ now + "';";
