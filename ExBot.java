@@ -120,6 +120,7 @@ public class ExBot {
 
 		Timestamp now = new Timestamp();
 
+		// クエリ作成
 		String qry1 = "SELECT text,once_id from once where posted =0 && reserve_time < '"
 				+ now + "';";
 		// コネクション確立
@@ -132,7 +133,7 @@ public class ExBot {
 				ids.add(rs1.getInt("once_id"));
 			}
 		} catch (SQLException e) {
-			System.err.println("定期ツイート検索できません");
+			System.err.println("単発ツイート検索できません");
 		}
 
 		// 投稿完了に更新
