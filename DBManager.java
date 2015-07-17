@@ -3,6 +3,7 @@ package exTwitter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
@@ -53,6 +54,10 @@ public class DBManager {
 	public void closeConnection(){
 		try {
 			rs.close();
+		}catch (SQLException e){
+			//なにもしない
+		}
+		try {
 			smt.close();
 			con.close();
 		}catch (Exception e){
