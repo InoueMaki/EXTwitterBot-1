@@ -14,14 +14,11 @@ import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 public class Control extends HttpServlet {
-	
-	
-	//jsp(METHOD:POST)
-	@SuppressWarnings("unchecked")
-	@Override
+
 	public void doPost(HttpServletRequest request,
 						HttpServletResponse response)
 						throws ServletException,IOException{
+		System.out.println("controlが呼ばれた");
 		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/plain;charset=UTF-8");
@@ -48,7 +45,7 @@ public class Control extends HttpServlet {
 				String user_name = request.getParameterValues("user_name")[0];
 				String password  = request.getParameterValues("password" )[0];
 				
-				auth=user.checkUser(user_name, password);
+				auth = user.checkUser(user_name, password);
 			}catch (Exception e){
 				System.err.println("ログイン照合できません");
 			}
@@ -80,14 +77,18 @@ public class Control extends HttpServlet {
 			if (lst.contains("メニュー")){
 				response.sendRedirect("menuUI.jsp");
 			}
-			else if (lst.contains("単発")){
-				out.println("単発");
+			else if (lst.contains("単発")||request.getAttribute("単発")!=null){
+				request.setAttribute("onceURL", "OnceUI.jsp");
+				RequestDispatcher rdisp = request.getRequestDispatcher("Once");
+				rdisp.forward(request, response);
 			}
 			else if (lst.contains("定期")){
 				out.println("定期");
 			}
-			else if (lst.contains("単発削除")){
-				out.println("単発削除");
+			else if (lst.contains("単発削除")||request.getAttribute("単発削除")!=null){
+				request.setAttribute("onceURL", "OnceDelUI.jsp");
+				RequestDispatcher rdisp = request.getRequestDispatcher("Once");
+				rdisp.forward(request, response);
 			}
 			else if (lst.contains("定期削除")){
 				out.println("定期削除");
@@ -100,10 +101,6 @@ public class Control extends HttpServlet {
 		}
 	}
 	
-	
-	
-	
-		
 	//Servlet,JSP(METHOD:GET)
 	@SuppressWarnings("unchecked")
 	@Override
