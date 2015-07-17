@@ -81,13 +81,17 @@ public class Control extends HttpServlet {
 				response.sendRedirect("menuUI.jsp");
 			}
 			else if (lst.contains("単発")){
-				out.println("単発");
+				request.setAttribute("onceURL", "OnceUI.jsp");
+				RequestDispatcher rdisp = request.getRequestDispatcher("Once");
+				rdisp.forward(request, response);
 			}
 			else if (lst.contains("定期")){
 				out.println("定期");
 			}
 			else if (lst.contains("単発削除")){
-				out.println("単発削除");
+				request.setAttribute("onceURL", "OnceDelUI.jsp");
+				RequestDispatcher rdisp = request.getRequestDispatcher("Once");
+				rdisp.forward(request, response);
 			}
 			else if (lst.contains("定期削除")){
 				out.println("定期削除");
